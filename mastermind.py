@@ -9,39 +9,37 @@ def lancer_jeu_mastermind():
         s.append(randint(0, 9))
     print(s)
 
-    # On construit une chaîne de caractère c contenant les chiffres de la liste s concaténés sans espace.
+    # On construit une chaîne de caractères c1 contenant les chiffres de la liste s concaténés sans espace.
     c1 = str()
     for i in s:
         c1 += str(i)
 
-    # On affiche une phrase de bienvenue
+    # On affiche une phrase de bienvenue au jeu de mastermind.
     print("Bienvenue au jeux Mastermind")
 
-    # On boucle pour les 15 tentatives
+    # On boucle pour les 15 tentatives du joueur.
     for i in range(15):
 
-        # On demande à l'utilisateur de saisir 5 chiffres et on stocke ces entiers dans une liste p.
+        # On demande à l'utilisateur de saisir 5 chiffres et on stocke ces chiffres dans une liste p.
         print("Veuillez saisir une combinaison de 5 chiffres :")
         p = list()
         for j in range(5):
             p.append(int(input()))
 
-        # On teste si le joueur a gagné et si c'est le cas on affiche un message de victoire et on termine.
+        # On teste si le joueur a gagné, c'est-à-dire que la liste s et p sont les mêmes. Si c'est le cas on affiche un
+        # message de victoire et on termine.
         if p == s:
             print("Vous avez gagné")
             print("La combinaison était", c1)
             return
 
-        # On construit une chaîne de caractère c2 contenant les chiffres de la liste p concaténés sans espace.
+        # On construit une chaîne de caractères c2 contenant les chiffres de la liste p concaténés sans espace.
         c2 = str()
         for j in p:
             c2 += str(j)
 
         # On affiche la combinaison entrée par le joueur.
         print("Vous avez saisi", c2)
-
-        # On calcule le nombre b de chiffre bien placés.
-        b = 0
 
         # Pour chaque position dans p on teste si le chiffre est bien placé.
         for j in range(len(p)):
@@ -58,11 +56,11 @@ def lancer_jeu_mastermind():
             o_s.append(0)
             o_b.append(0)
 
-        # On va modifier la liste o_s de sorte à ce que o_s[c] contienne le nombre d'occurences de c dans la liste s.
+        # On modifie la liste o_s de sorte à ce que o_s[c] contienne le nombre d'occurences de c dans la liste s.
         for j in range(len(s)):
             o_s[s[j]] += 1
 
-        # On va modifier la liste o_s de sorte à ce que o_s[c] contienne le nombre d'occurences de c dans la liste p.
+        # On modifie la liste o_s de sorte à ce que o_s[c] contienne le nombre d'occurences de c dans la liste p.
         for j in range(len(p)):
             o_p[p[j]] += 1
 
