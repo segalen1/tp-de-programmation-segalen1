@@ -41,12 +41,6 @@ def lancer_jeu_mastermind():
         # On affiche la combinaison entrée par le joueur.
         print("Vous avez saisi", c2)
 
-        # Pour chaque position dans p on teste si le chiffre est bien placé.
-        for j in range(len(p)):
-            # Si le chiffre à la position i est le même pour p et s alors il y a un chiffre bien placé de plus.
-            if p[j] == s[j]:
-                b += 1
-
         # On crée trois listes o_b, o_p et o_s de taille dix avec toutes les cases à 0.
         o_p = list()
         o_s = list()
