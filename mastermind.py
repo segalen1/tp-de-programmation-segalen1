@@ -1,6 +1,6 @@
 from random import randint
 
-9
+
 def lancer_jeu_mastermind():
 
     # On génère une combinaison secrête s aléatoirement.
